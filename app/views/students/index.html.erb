@@ -1,0 +1,4 @@
+<p>Aquí se mostrará la lista de estudiantes:</p>
+<% @students.each do |student| %>
+  <%= link_to(student.name, "/students/#{student.id}") %>
+<% end %>

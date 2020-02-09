@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-    has_one_attached :pic
-  end
+  has_one_attached :pic
+end
