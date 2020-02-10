@@ -1,0 +1,10 @@
+<%= link_to "teachers index", "/teachers" %>
+
+
+<h2><%= @teacher.name %></h2>
+<% if @teacher.pic.attached? %>
+  <%= image_tag @teacher.pic %>
+<% end %>
+
+<%= link_to "edit", "/teachers/#{@teacher.id}/edit" %>
+<%= button_to "Delete", @teacher, method: :delete %>
