@@ -1,11 +1,10 @@
-<%= link_to "index of students", "students" %>
+<%= link_to "index", "/students" %>
 
 
 <h2><%= @student.name %></h2>
-<%= if @student.pic.attached? %>
+<% if @student.pic.attached? %>
   <%= image_tag @student.pic %>
-  <%= image_tag @student.pic, class: "burger-pic mac", height: 800 %>
-<%= end %>
+<% end %>
 
 <%= link_to "edit", "/students/#{@student.id}/edit" %>
-<%= button_to "Delete, @student, method: :delete, data: { confirm: "Are you sure?"} %>
+<%= button_to "Delete", @student, method: :delete %>

@@ -14,13 +14,13 @@ class StudentsController < ApplicationController
   def create
     student = Student.create(student_params)
     
-    redirect_to "/student/#{student.id}" or redirect_to student
+    redirect_to student
   end
   def update
     @student = Student.find(params[:id])
     @student.update(student_params)
     
-    redirect_to student
+    redirect_to @student
   end
   
   def destroy
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   end
   private
   def student_params
-    params.require(:student).permit(:name, :price, :pic)
+    params.require(:student).permit(:name, :pic)
   end
 end
   

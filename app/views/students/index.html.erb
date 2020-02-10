@@ -1,4 +1,6 @@
 <p>Aquí se mostrará la lista de estudiantes:</p>
+<p>Link para crear un <%= link_to "Nuevo Estudiante", "/students/new" %>:</p>
+
 <% @students.each do |student| %>
-  <%= link_to(student.name, "/students/#{student.id}") %>
+  <div><%= link_to(student.name, "/students/#{student.id}") %></div>
 <% end %>
