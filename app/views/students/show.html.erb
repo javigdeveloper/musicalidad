@@ -2,6 +2,7 @@
 
 
 <h2><%= @student.name %></h2>
+<h2>Edad: <%= @student.age %></h2>
 <% if @student.pic.attached? %>
   <%= image_tag @student.pic %>
 <% end %>
