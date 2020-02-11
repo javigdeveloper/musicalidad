@@ -1,3 +1,3 @@
-class Teacher < ApplicationRecord
-    has_one_attached :pic
-  end
+class Teacher < User
+  has_one_attached :pic
+end

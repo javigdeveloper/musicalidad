@@ -1,11 +1,11 @@
 <%= link_to "students index", "/students" %>
 
-
 <h2><%= @student.name %></h2>
 <h2>Edad: <%= @student.age %></h2>
 <% if @student.pic.attached? %>
-  <%= image_tag @student.pic %>
+<%= image_tag @student.pic %>
 <% end %>
 
 <%= link_to "edit", "/students/#{@student.id}/edit" %>
 <%= button_to "Delete", @student, method: :delete %>
+<div>Id for this student is <%= (@student.id) %></div>
