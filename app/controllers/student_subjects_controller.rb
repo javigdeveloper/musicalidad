@@ -16,6 +16,13 @@ class StudentSubjectsController < ApplicationController
     end
   end
 
+
+  def destroy
+    StudentSubject.find_by(student_id: params[:student_id], subject_id: params[:subject_id]).destroy
+    redirect_to subjects_path(params[:subject_id])
+  end
+
+
   private
   def student_subjects_params
     params.require(:student_subject).permit( :student_id )

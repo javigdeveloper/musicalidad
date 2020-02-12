@@ -1,5 +1,3 @@
-<p>Link para añadir un <%= link_to "Nuevo Estudiante", "/students/new" %> a esta clase:</p>
-
 <% @subjects.each do |subject| %>
   <div><%= link_to(subject.name, "/subjects/#{subject.id}") %></div>
 <% end %>

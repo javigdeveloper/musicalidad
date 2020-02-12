@@ -3,7 +3,7 @@
 <div><%= link_to "subjects index", "/subjects" %></div>
 
 
-<h4>Nombre de la clase: <%= @subject.name %></h4>
+<h2>Nombre de la clase: <%= @subject.name %></h2>
 <h4>Profesor de la clase: <%= @subject.teacher_id %></h4>
 <h4>Hora de la clase: <%= @subject.time %></h4>
 <h4>Nombre del lugar: <%= @subject.room %></h4>
@@ -12,9 +12,12 @@
 
 <div><%= link_to "add a student to this class", "/subjects/#{@subject.id}/student_subjects/new" %></div>
 
-<h1>Listado de estudiantes en esta clase: </h1>
+<h4>Listado de estudiantes en esta clase: </h4>
 
 <% @subject.students.each do |student| %>
   <div><%= student.name %></div>
+  <div>Edad: <%= student.age %></div>
+  <%= button_to "Remove Student from class", 
+  "/subjects/#{@subject.id}/delete_by_student/#{student.id}", method: :delete %>
 <% end %>
 
