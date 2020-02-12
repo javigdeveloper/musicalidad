@@ -2,6 +2,9 @@
   <div>Nuevo estudiante:</div>
   Nombre: <%= f.text_field :name %>
   Edad: <%= f.text_field :age %>
-  Foto: <%= f.file_field :pic %>    
+  Foto: <%= f.file_field :pic %>
   <%= f.submit %>
 <% end %>
+
+<div><%= link_to "back to students", "/students" %></div>
+<h1>!!!!there should be a link to add the new student to a lesson</h1>

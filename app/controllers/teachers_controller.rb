@@ -12,9 +12,9 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
   end
   def create
-    teacher = Teacher.create(teacher_params)
-    
-    redirect_to teacher
+    @teacher = Teacher.new(teacher_params)
+    @teacher.save
+    redirect_to @teacher
   end
   def update
     @teacher = Teacher.find(params[:id])

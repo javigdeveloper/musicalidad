@@ -1,0 +1,15 @@
+<div><%= link_to "students index", "/students" %></div>
+<div><%= link_to "teachers index", "/teachers" %></div>
+<div><%= link_to "subjects index", "/subjects" %></div>
+
+
+<h4>Nombre de la clase: <%= @subject.name %></h4>
+<h4>Profesor de la clase: <%= @subject.teacher_id %></h4>
+<h4>Hora de la clase: <%= @subject.time %></h4>
+<h4>Nombre del lugar: <%= @subject.room %></h4>
+<h4>Capacidad del lugar: <%= @subject.room_limit %></h4>
+
+
+<h4>Listado de estudiantes en esta clase: </h4>
+
+

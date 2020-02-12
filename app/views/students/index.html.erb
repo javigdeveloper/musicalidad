@@ -1,5 +1,8 @@
-<p>Aquí se mostrará la lista de estudiantes:</p>
+<div><%= link_to "teachers index", "/teachers" %></div>
+<div><%= link_to "subjects index", "/subjects" %></div>
+<p>---------------------------------------------------</p>
 <p>Link para crear un <%= link_to "Nuevo Estudiante", "/students/new" %>:</p>
+<p>Lista completa de estudiantes:</p>
 
 <% @students.each do |student| %>
   <div><%= link_to(student.name, "/students/#{student.id}") %></div>
