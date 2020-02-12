@@ -1,0 +1,10 @@
+<%= form_for [@subject, @student_subject] do |f| %>
+  <div>Nuevo estudiante:</div>
+  <%= f.select("student_id", Student.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+<div><%= link_to "back to subjects", "/subjects" %></div>

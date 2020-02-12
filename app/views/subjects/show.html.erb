@@ -10,6 +10,11 @@
 <h4>Capacidad del lugar: <%= @subject.room_limit %></h4>
 
 
-<h4>Listado de estudiantes en esta clase: </h4>
+<div><%= link_to "add a student to this class", "/subjects/#{@subject.id}/student_subjects/new" %></div>
 
+<h1>Listado de estudiantes en esta clase: </h1>
+
+<% @subject.students.each do |student| %>
+  <div><%= student.name %></div>
+<% end %>
 
