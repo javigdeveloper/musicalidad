@@ -20,7 +20,7 @@ class StudentSubjectsController < ApplicationController
 
   def destroy
     StudentSubject.find_by(student_id: params[:student_id], subject_id: params[:subject_id]).destroy
-    redirect_to subjects_path(params[:subject_id])
+    redirect_back(fallback_location: root_path)
   end
 
 

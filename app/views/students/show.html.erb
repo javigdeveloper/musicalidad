@@ -10,16 +10,14 @@
 <%= button_to "Delete", @student, method: :delete %>
 <div>Id for this student is <%= (@student.id) %></div>
 
-<h1>!!!here should be a link to add the new student to a lesson</h1>
-
-
 <%= form_for [@student, @student_subject] do |f| %>
   <div>Añadir a clase: <%= f.select("subject_id", Subject.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
   <%= f.submit %>
 <% end %>
 
-
 <% @student.subjects.each do |subject| %>
+  <div>-----------------------------------</div>
+  <div><%= subject.name %></div>
   <%= button_to "Remove Student from class", 
   "/students/#{@student.id}/delete_by_subject/#{subject.id}", method: :delete %>
 <% end %>
