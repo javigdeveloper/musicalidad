@@ -1,7 +1,6 @@
 <%= form_for @subject do |f| %>
   <div>Nueva clase:</div>
   Nombre de la clase: <%= f.text_field :name %>
-  <div>Estudiantes en esta clase: seran añadidos de otra forma</div>
   <div>Profesor: <%= f.select :teacher_id, options_from_collection_for_select(Teacher.all, 'id', 'name')%>
   <div>Hora de la clase: <%= f.text_field :time %></div>
   <div>Nombre del salon: <%= f.text_field :room %></div>

@@ -1,9 +1,9 @@
 <%= form_for @subject do |f| %>
   <div>All the students in this lesson:</div>
   <div>Nombre de la clase: <%= f.text_field :name %></div>
-  <div>Profesor: <%= f.text_field :teacher_id %></div>
+  <div>Profesor: <%= f.select :teacher_id, options_from_collection_for_select(Teacher.all, 'id', 'name')%>
   <div>Hora: <%= f.text_field :time %></div>
   <div>Salon: <%= f.text_field :room %></div>
   <div>Capacidad: <%= f.text_field :room_limit %></div>
   <%= f.submit %>
-  <% end %>
+<% end %>

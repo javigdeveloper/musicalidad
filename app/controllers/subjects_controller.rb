@@ -29,8 +29,7 @@ class SubjectsController < ApplicationController
   end
   
   def destroy
-    Student.find(params[:id]).destroy
-    
+    Subject.find(params[:id]).destroy
     redirect_to students_path
   end
   private

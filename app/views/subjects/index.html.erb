@@ -1,3 +1,5 @@
 <% @subjects.each do |subject| %>
   <div><%= link_to(subject.name, "/subjects/#{subject.id}") %></div>
 <% end %>
+
+<div>Crear <%= link_to "nueva clase", "/subjects/new" %></div>
