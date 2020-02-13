@@ -8,12 +8,16 @@ class StudentSubjectsController < ApplicationController
     @student_subject = StudentSubject.new(student_subjects_params)
     @student_subject.subject_id = params[:subject_id] if params[:subject_id]
     @student_subject.student_id = params[:student_id] if params[:student_id]
-    if @student_subject.save
-      redirect_to "/subjects/#{params[:subject_id]}"
-      flash[:notice] = "Student added!"
+    subject = Subject.find(params[:subject_id] || params[:student_subject][:subject_id])
+    if subject.students.length < subject.room_limit
+      @student_subject.save
+      if @student_subject.save
+        redirect_to "/subjects/#{subject.id}"
+        flash[:notice] = "Student added!"
+      end
     else
       redirect_back(fallback_location: root_path)
-      flash[:alert] = "Student_Subject creation failed"
+      flash[:alert] = "Imposible añadir estudiante, es posible que la clase esté llena."
     end
   end
 

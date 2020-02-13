@@ -1,6 +1,6 @@
-<div><%= link_to "students index", "/students" %></div>
-<div><%= link_to "teachers index", "/teachers" %></div>
-<div><%= link_to "subjects index", "/subjects" %></div>
+<%= link_to "Lista de Estudiantes", "/students" %>
+<%= link_to "Lista de Profesores", "/teachers" %>
+<%= link_to "Lista de Materias", "/subjects" %>
 
 <h2>Nombre de la clase: <%= @subject.name %></h2>
 <h4>Profesor de la clase: <%= Teacher.find(@subject.teacher_id).name %></h4>

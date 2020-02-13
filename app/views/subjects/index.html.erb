@@ -1,5 +1,9 @@
+<%= link_to "Lista de Estudiantes", "/students" %>
+<%= link_to "Lista de Profesores", "/teachers" %>
+<%= link_to "Lista de Materias", "/subjects" %>
+
+<div>Crear <%= link_to "nueva clase", "/subjects/new" %></div>
+
 <% @subjects.each do |subject| %>
   <div><%= link_to(subject.name, "/subjects/#{subject.id}") %></div>
 <% end %>
-
-<div>Crear <%= link_to "nueva clase", "/subjects/new" %></div>
