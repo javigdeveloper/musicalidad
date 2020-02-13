@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "students#index"
   resources :students do
     resources :student_subjects
+    delete "/delete_by_subject/:subject_id", to: "student_subjects#destroy"
   end
   resources :teachers
   resources :subjects do
