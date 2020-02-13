@@ -11,3 +11,10 @@
 <div>Id for this student is <%= (@student.id) %></div>
 
 <h1>!!!here should be a link to add the new student to a lesson</h1>
+
+
+<%= form_for [@student, @student_subject] do |f| %>
+  <div>Añadir a clase: <%= f.select("subject_id", Subject.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+  <%= f.submit %>
+  <StudentSubject id: 4, student_id: 6, subject_id: 2>
+<% end %>

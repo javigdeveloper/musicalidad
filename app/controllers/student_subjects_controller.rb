@@ -6,7 +6,8 @@ class StudentSubjectsController < ApplicationController
 
   def create
     @student_subject = StudentSubject.new(student_subjects_params)
-    @student_subject.subject_id = params[:subject_id]
+    @student_subject.subject_id = params[:subject_id] if params[:subject_id]
+    @student_subject.student_id = params[:student_id] if params[:student_id]
     if @student_subject.save
       redirect_to "/subjects/#{params[:subject_id]}"
       flash[:notice] = "Student added!"
@@ -25,6 +26,6 @@ class StudentSubjectsController < ApplicationController
 
   private
   def student_subjects_params
-    params.require(:student_subject).permit( :student_id )
+    params.require(:student_subject).permit( :student_id, :subject_id )
   end
 end
