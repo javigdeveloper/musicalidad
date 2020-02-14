@@ -1,6 +1,6 @@
 <%= form_for @teacher do |f| %>
   <div>Nuevo Profesor:</div>
-  Profesor: <%= f.text_field :name %>
-  Pic: <%= f.file_field :pic %>
+  <div>Profesor: <%= f.text_field :name %></div>
+  <div>Pic: <%= f.file_field :pic %></div>
   <%= f.submit %>
 <% end %>

@@ -1,7 +1,7 @@
 <%= form_for @student do |f| %>
   <div>Nuevo Estudiante:</div>
-  Estudiante: <%= f.text_field :name %>
-  Edad: <%= f.text_field :age %>
+  <div>Estudiante: <%= f.text_field :name %></div>
+  <div>Edad: <%= f.text_field :age %></div>
   Pic: <%= f.file_field :pic %>
   <%= f.submit %>
 <% end %>
