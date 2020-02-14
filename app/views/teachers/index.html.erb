@@ -1,7 +1,3 @@
-<%= link_to "Lista de Estudiantes", "/students" %>
-<%= link_to "Lista de Profesores", "/teachers" %>
-<%= link_to "Lista de Materias", "/subjects" %>
-
 <h2>Lista de profesores:</h2>
 <% @teachers.each do |teacher| %>
   <div><%= link_to(teacher.name, "/teachers/#{teacher.id}") %></div>
