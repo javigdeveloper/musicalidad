@@ -1,8 +1,9 @@
 <h2><%= @teacher.name %></h2>
-<div>Id del Profesor: <%= @teacher.id %></div>
 <% if @teacher.pic.attached? %>
-  <%= image_tag @teacher.pic %>
+<%= image_tag @teacher.pic %>
 <% end %>
 
+<div>Correo Electrónico: <%= @teacher.email %></div>
+<div>Id del Profesor: <%= @teacher.id %></div>
 <%= link_to "edit", "/teachers/#{@teacher.id}/edit" %>
 <%= button_to "Delete", @teacher, method: :delete %>

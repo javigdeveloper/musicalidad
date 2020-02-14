@@ -1,0 +1,15 @@
+.my-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.my-body {
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+
+.my-pic {
+  width: 200px;
+  height: auto;
+}
